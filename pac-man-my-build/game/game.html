@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Pac-man</title>
+    <link rel="stylesheet" href="game.css">
+    <script type="module" src="game.js"></script>
+  </head>
+  <body class="body">
+    <div class="controls">
+      <button onclick="togglePause()">⏸ Пауза</button>
+      <button onclick="restartGame()">🔄 Рестарт</button>
+      <button onclick="promptSave()">💾 Сохранить</button>
+      <button onclick="promptLoad()">📂 Загрузить</button>
+      <button onclick="newGame()">🆕 Новая игра</button>
+    </div>
+
+    <h3 class="title-score">Счет: <span id="score"></span></h3>
+
+    <div class="grid"></div>
+
+    <div class="button-back">
+      <button onclick="goBack()">👈</button>
+    </div>
+
+    <div id="save-load-modal" class="modal hidden">
+      <div class="modal-content">
+        <h2 id="modal-title">Выбор слота</h2>
+        <div class="slot-buttons">
+          <div>
+            <button onclick="handleSlot(1)">Слот 1</button>
+            <span id="slot-info-1" class="slot-info"></span>
+          </div>
+          <div>
+            <button onclick="handleSlot(2)">Слот 2</button>
+            <span id="slot-info-2" class="slot-info"></span>
+          </div>
+          <div>
+            <button onclick="handleSlot(3)">Слот 3</button>
+            <span id="slot-info-3" class="slot-info"></span>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px;"> <button onclick="resetSlot()">🗑 Очистить слот</button> </div>
+        <button class="close-btn" onclick="closeModal()">Закрыть</button>
+      </div>
+    </div>
+
+    </div>
+
+
+  </body>
+</html>
