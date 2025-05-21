@@ -1,24 +1,25 @@
-const size = 20;
+const size = 28;
 const grid = document.getElementById("map");
 const tileType = document.getElementById("tileType");
-let layout = Array(size * size).fill(0); // по умолчанию всё pac-dot
+let layout = Array(size * size).fill(0); // по дефорту все пустое
 
 function drawGrid() {
-  grid.innerHTML = ''; // очищаем DOM перед перерисовкой
+  grid.innerHTML = ''; // чистим перед перерисовкой
 
   layout.forEach((val, i) => {
     const tile = document.createElement("div");
+    const classMap = ["pac-dot", "wall", "ghost-lair", "power-pellet", "empty"]; // классы стен
 
-    // Удаляем все старые tile-классы
     for (let j = 0; j <= 4; j++) {
-      tile.classList.remove(`tile-${j}`);
+      tile.classList.remove(classMap[layout[i]]);
     }
 
-    tile.classList.add(`tile-${val}`);
+    tile.classList.add(classMap[val]);
+
     tile.onclick = () => {
       layout[i] = parseInt(tileType.value);
-      tile.className = ''; // сброс всех классов
-      tile.classList.add(`tile-${layout[i]}`);
+      tile.className = "";
+      tile.classList.add(classMap[layout[i]]);
     };
 
     grid.appendChild(tile);
@@ -43,13 +44,13 @@ function generateRandomMap(size) {
     const y = Math.floor(i / size);
 
     if (x === 0 || x === size - 1 || y === 0 || y === size - 1) {
-      map.push(1); // стены по краям
+      map.push(1);
     } else if ((x % 2 === 0 && y % 2 === 0) && Math.random() < 0.5) {
-      map.push(1); // случайные внутренние стены
+      map.push(1);
     } else if (Math.random() < 0.02) {
-      map.push(3); // power-pellet
+      map.push(3);
     } else {
-      map.push(0); // pac-dot
+      map.push(0);
     }
   }
 

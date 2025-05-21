@@ -1,5 +1,3 @@
-// const maps = requred("./maps/map.js");
-
 import {maps}  from '../maps/map.js';
 
 console.log(maps)
@@ -28,8 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
         case "map2":
             layout = maps.map_2; // карта 2
             break;
+        case "map3":
+            layout = maps.map_3; // карта 3
+            break;
         case "test":
-            layout = maps.test; // карта 2
+            layout = maps.test; // тестовая
             break;
         default:
             layout = maps.map_default; // дефолтная карта
@@ -197,12 +198,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Попытка загрузить сохранение
     const lastSlot = localStorage.getItem("pacmanLastSlot");
     if (lastSlot) {
-        loadGameState(lastSlot); 
+        loadGameState(lastSlot);
     } else {
         squares[pacmanCurrentIndex].classList.add("pac-man");
     }
 
-    loadGameState()
+    // loadGameState()
 
     function newGame() {
         const confirmNew = confirm("Начать новую игру? Текущий прогресс будет удалён.")

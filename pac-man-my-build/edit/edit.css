@@ -1,7 +1,7 @@
 .grid {
   display: grid;
-  grid-template-columns: repeat(20, 24px);
-  grid-template-rows: repeat(20, 24px);
+  grid-template-columns: repeat(28, 24px);
+  grid-template-rows: repeat(28, 24px);
   gap: 1px;
   margin-bottom: 20px;
 }
@@ -14,11 +14,12 @@
   cursor: pointer;
 }
 
-.tile-0 { background: green !important; }
-.tile-1 { background: blue !important; }
-.tile-2 { background: red !important; }
-.tile-3 { background: yellow !important; }
-.tile-4 { background: white !important; }
+.pac-dot { background: green !important; }
+.wall { background: blue !important; }
+.ghost-lair { background: red !important; }
+.power-pellet { background: yellow !important; }
+.empty { background: white !important; }
+
 
 .toolbar {
   display: flex;
