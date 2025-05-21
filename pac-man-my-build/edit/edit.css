@@ -1,0 +1,34 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 24px);
+  grid-template-rows: repeat(20, 24px);
+  gap: 1px;
+  margin-bottom: 20px;
+}
+
+.grid div {
+  width: 24px;
+  height: 24px;
+  background: #ccc;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+
+.tile-0 { background: green !important; }
+.tile-1 { background: blue !important; }
+.tile-2 { background: red !important; }
+.tile-3 { background: yellow !important; }
+.tile-4 { background: white !important; }
+
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  margin-top: 10px;
+}
