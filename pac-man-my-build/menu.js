@@ -31,7 +31,9 @@ function continueGame() {
 }
 
 function openSettings() {
-  alert("Настройки пока не доступны.");
+  // alert("Настройки пока не доступны.");
+  window.location.href = `./edit/edit.html`;
+
 }
 
 function selectMap() {

@@ -5,21 +5,21 @@
   <title>Редактор карты</title>
   <link rel="stylesheet" href="edit.css">
 </head>
-<body>
-  <h1>Редактор карты (28×28)</h1>
+<body class="body">
+  <h1 class="title-score">Редактор карты (28×28)</h1>
   <div id="map" class="grid"></div>
 
   <div class="toolbar">
-    <select id="tileType">
+    <select class="button" id="tileType">
       <option value="0">Маленькая еда</option>
       <option value="1">Стена</option>
       <option value="2">Призраки</option>
       <option value="3">Большая точка</option>
       <option value="4">Пусто</option>
     </select>
-    <button onclick="saveMap()">💾 Сохранить</button>
-    <button onclick="generate()">🎲 Генерация</button>
-    <button onclick="exportAsJSON()">⬇️ Экспорт JSON</button>
+    <button class="button" onclick="saveMap()">💾 Сохранить</button>
+    <button class="button" onclick="generate()">🎲 Генерация</button>
+    <button class="button" onclick="exportAsJSON()">⬇️ Экспорт JSON</button>
     <textarea id="output" readonly></textarea>
   </div>
 
